@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Busca de Credenciados - Engemed</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-hospital me-2"></i>
+                Engemed - Sistema de Credenciados
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#sobreModal">
+                    <i class="fas fa-info-circle me-1"></i>Sobre
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Painel de Controle -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-cogs me-2"></i>Configurações
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Seleção de Clientes -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-user me-1"></i>Cliente 1
+                            </label>
+                            <select class="form-select" id="cliente1">
+                                <option value="">Selecione o cliente 1...</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-user me-1"></i>Cliente 2
+                            </label>
+                            <select class="form-select" id="cliente2">
+                                <option value="">Selecione o cliente 2...</option>
+                            </select>
+                        </div>
+
+                        <!-- Filtro de Estados -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-map-marker-alt me-1"></i>Estados (opcional)
+                            </label>
+                            <div class="form-control" style="height: 120px; overflow-y: auto;">
+                                <div id="estados-container">
+                                    <!-- Estados serão carregados aqui -->
+                                </div>
+                            </div>
+                            <small class="text-muted">Selecione os estados para filtrar credenciados</small>
+                        </div>
+
+                        <!-- Botões de Ação -->
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" id="gerarMapa">
+                                <i class="fas fa-map me-1"></i>Gerar Mapa
+                            </button>
+                            <button class="btn btn-success" id="criarDadosExemplo">
+                                <i class="fas fa-database me-1"></i>Criar Dados de Exemplo
+                            </button>
+                            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#importarModal">
+                                <i class="fas fa-file-excel me-1"></i>Importar Excel
+                            </button>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="mt-3">
+                            <div id="status" class="alert alert-info d-none">
+                                <i class="fas fa-info-circle me-1"></i>
+                                <span id="status-text">Pronto para gerar mapa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Histórico de Mapas -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h6 class="mb-0">
+                            <i class="fas fa-history me-2"></i>Histórico
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="historico-container">
+                            <!-- Histórico será carregado aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Área do Mapa -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-map-marked-alt me-2"></i>Visualizador de Mapa
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="mapa-container" style="height: 600px;">
+                            <div class="d-flex align-items-center justify-content-center h-100 text-muted">
+                                <div class="text-center">
+                                    <i class="fas fa-map fa-3x mb-3"></i>
+                                    <p>Selecione os clientes e clique em "Gerar Mapa" para visualizar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Importar Excel -->
+    <div class="modal fade" id="importarModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-file-excel me-2"></i>Importar Dados do Excel
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="importarForm">
+                        <div class="mb-3">
+                            <label class="form-label">Selecione o arquivo Excel:</label>
+                            <input type="file" class="form-control" id="arquivoExcel" accept=".xlsx,.xls" required>
+                            <small class="text-muted">
+                                O arquivo deve ter duas abas: "Clientes" e "Credenciados"
+                            </small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="importarBtn">
+                        <i class="fas fa-upload me-1"></i>Importar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sobre -->
+    <div class="modal fade" id="sobreModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-info-circle me-2"></i>Sobre o Sistema
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Sistema de Busca de Credenciados</h6>
+                    <p><strong>Versão:</strong> 3.0</p>
+                    <p><strong>Desenvolvido para:</strong> Engemed</p>
+                    <hr>
+                    <h6>Funcionalidades:</h6>
+                    <ul>
+                        <li>Busca de credenciados por proximidade geográfica</li>
+                        <li>Geração de mapas interativos</li>
+                        <li>Filtro por estados</li>
+                        <li>Interface web moderna</li>
+                        <li>Banco de dados SQLite</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 

@@ -1,0 +1,502 @@
+/* Estilos personalizados para o Sistema de Credenciados */
+
+:root {
+    --primary-color: #2E86AB;
+    --secondary-color: #A23B72;
+    --success-color: #28A745;
+    --info-color: #17A2B8;
+    --warning-color: #FFC107;
+    --danger-color: #DC3545;
+    --light-color: #F8F9FA;
+    --dark-color: #343A40;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar personalizada */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Cards com sombra suave */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+/* Botões personalizados */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1e6b8a;
+    border-color: #1e6b8a;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+}
+
+/* Formulários */
+.form-select, .form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(46, 134, 171, 0.25);
+}
+
+/* Checkboxes personalizados */
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Status alerts */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Container do mapa */
+#mapa-container {
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Estados container */
+#estados-container {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.estado-item {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.estado-item:last-child {
+    border-bottom: none;
+}
+
+/* Histórico */
+.historico-item {
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.historico-item:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-color);
+}
+
+.historico-item h6 {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.historico-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Loading spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Modal personalizado */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+}
+
+.modal-header {
+    border-radius: 12px 12px 0 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 10px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    #mapa-container {
+        height: 400px !important;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e6b8a;
+}
+
+/* Tooltips personalizados */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip-inner {
+    background-color: var(--dark-color);
+    border-radius: 6px;
+}
+
+/* Badges personalizados */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+}
+
+/* Ícones */
+.fas, .far, .fab {
+    transition: transform 0.2s ease;
+}
+
+.btn:hover .fas,
+.btn:hover .far,
+.btn:hover .fab {
+    transform: scale(1.1);
+}
+
+/* Efeitos de hover nos cards */
+.card-header:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Estilo para links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1e6b8a;
+}
+
+/* Estilo para texto de ajuda */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Estilo para labels */
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo para small text */
+small {
+    font-size: 0.875rem;
+}
+
+/* Estilo para código */
+code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+/* Estilo para pre */
+pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+/* Estilo para tabelas */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para listas */
+.list-group-item {
+    border-radius: 6px;
+    margin-bottom: 2px;
+    border: 1px solid #e9ecef;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para breadcrumbs */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+}
+
+/* Estilo para paginação */
+.page-link {
+    color: var(--primary-color);
+    border-color: #e9ecef;
+}
+
+.page-link:hover {
+    color: #1e6b8a;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Estilo para progress bars */
+.progress {
+    border-radius: 8px;
+    height: 8px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* Estilo para dropdowns */
+.dropdown-menu {
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para accordion */
+.accordion-button {
+    background-color: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(46, 134, 171, 0.25);
+}
+
+/* Estilo para tabs */
+.nav-tabs .nav-link {
+    border-radius: 8px 8px 0 0;
+    border: 1px solid #e9ecef;
+    color: #6c757d;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Estilo para carousel */
+.carousel-item {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo para spinners */
+.spinner-border {
+    color: var(--primary-color);
+}
+
+/* Estilo para placeholders */
+.placeholder {
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+/* Estilo para ratio */
+.ratio {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo para offcanvas */
+.offcanvas {
+    border-radius: 0 8px 8px 0;
+}
+
+.offcanvas-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Estilo para toast */
+.toast {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.toast-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Estilo para popover */
+.popover {
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.popover-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Estilo para tooltip */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip-inner {
+    background-color: var(--dark-color);
+    border-radius: 6px;
+}
+
+/* Estilo para backdrop */
+.modal-backdrop {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Estilo para focus visible */
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+} 

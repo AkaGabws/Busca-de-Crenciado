@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fe6194a97530119e23cc239dfd496a97 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fe6194a97530119e23cc239dfd496a97" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fe6194a97530119e23cc239dfd496a97 = L.map(
+                "map_fe6194a97530119e23cc239dfd496a97",
+                {
+                    center: [-17.855449999999998, -45.90835],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7f41b355e5073cec9ff24c30563f38ae = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7f41b355e5073cec9ff24c30563f38ae.addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var marker_e63130cebdc7a1355761675c734f72f5 = L.marker(
+                [-15.7942, -47.8822],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_3dc3d00605140f36777974434fec29f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3915d77288c099222b12e4931c696e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a76fd7963d8600bcd5c201283f2e25ca = $(`<div id="html_a76fd7963d8600bcd5c201283f2e25ca" style="width: 100.0%; height: 100.0%;">Cliente 1: Brasília</div>`)[0];
+                popup_a3915d77288c099222b12e4931c696e7.setContent(html_a76fd7963d8600bcd5c201283f2e25ca);
+            
+        
+
+        marker_e63130cebdc7a1355761675c734f72f5.bindPopup(popup_a3915d77288c099222b12e4931c696e7)
+        ;
+
+        
+    
+    
+                marker_e63130cebdc7a1355761675c734f72f5.setIcon(icon_3dc3d00605140f36777974434fec29f7);
+            
+    
+            var marker_c86c3afedb7cd7ba819dae0c9b3243ec = L.marker(
+                [-19.9167, -43.9345],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_ec4b913a6dae22c39fed576edb3149f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "user",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc4cb82d35f0282452c42e4e52fcb641 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79631da724a9b95f24d29be6b258a123 = $(`<div id="html_79631da724a9b95f24d29be6b258a123" style="width: 100.0%; height: 100.0%;">Cliente 2: Belo Horizonte</div>`)[0];
+                popup_bc4cb82d35f0282452c42e4e52fcb641.setContent(html_79631da724a9b95f24d29be6b258a123);
+            
+        
+
+        marker_c86c3afedb7cd7ba819dae0c9b3243ec.bindPopup(popup_bc4cb82d35f0282452c42e4e52fcb641)
+        ;
+
+        
+    
+    
+                marker_c86c3afedb7cd7ba819dae0c9b3243ec.setIcon(icon_ec4b913a6dae22c39fed576edb3149f4);
+            
+    
+            var marker_67dea9df2cfb27491073a1c790884c2d = L.marker(
+                [-15.7942, -47.8822],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_5afa5e3cc1687b34fb77820de45ac644 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "hospital-o",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0b9b016efa3b9d4ee53bc978ef51ac9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5e536916c475f6478f3dcfb7ae3fe32 = $(`<div id="html_d5e536916c475f6478f3dcfb7ae3fe32" style="width: 100.0%; height: 100.0%;">Credenciado 1: Hospital de Base<br>Distância: 0.00 km</div>`)[0];
+                popup_f0b9b016efa3b9d4ee53bc978ef51ac9.setContent(html_d5e536916c475f6478f3dcfb7ae3fe32);
+            
+        
+
+        marker_67dea9df2cfb27491073a1c790884c2d.bindPopup(popup_f0b9b016efa3b9d4ee53bc978ef51ac9)
+        ;
+
+        
+    
+    
+                marker_67dea9df2cfb27491073a1c790884c2d.setIcon(icon_5afa5e3cc1687b34fb77820de45ac644);
+            
+    
+            var marker_f97f6348e3362460f0242cc73be5888c = L.marker(
+                [-19.9167, -43.9345],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_fa1f29c3d880b9fb7103a0d8bf175c55 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "hospital-o",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5753d1e6d81c7cb85471b9685e6faf5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec0787f57e1d8b6fcf9b0ee74bc6dbd8 = $(`<div id="html_ec0787f57e1d8b6fcf9b0ee74bc6dbd8" style="width: 100.0%; height: 100.0%;">Credenciado 2: Clínica São Vicente<br>Distância: 0.00 km</div>`)[0];
+                popup_d5753d1e6d81c7cb85471b9685e6faf5.setContent(html_ec0787f57e1d8b6fcf9b0ee74bc6dbd8);
+            
+        
+
+        marker_f97f6348e3362460f0242cc73be5888c.bindPopup(popup_d5753d1e6d81c7cb85471b9685e6faf5)
+        ;
+
+        
+    
+    
+                marker_f97f6348e3362460f0242cc73be5888c.setIcon(icon_fa1f29c3d880b9fb7103a0d8bf175c55);
+            
+    
+            var poly_line_f6444ab3947ec2302334e582d3c56872 = L.polyline(
+                [[-15.7942, -47.8822], [-15.7942, -47.8822]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var poly_line_69425326b4346448f9470b1c6492d0be = L.polyline(
+                [[-19.9167, -43.9345], [-19.9167, -43.9345]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var marker_c04c9cfeafe71140b7140f957507be9e = L.marker(
+                [-15.8142, -47.9022],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_999bb1eb91cd668d410537a4c9c9e7f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d24c014551cbccff8f1225ee26b0170 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8bca937f53efc5cac52236e502b54968 = $(`<div id="html_8bca937f53efc5cac52236e502b54968" style="width: 100.0%; height: 100.0%;">Hospital Municipal<br>UF: DF</div>`)[0];
+                popup_9d24c014551cbccff8f1225ee26b0170.setContent(html_8bca937f53efc5cac52236e502b54968);
+            
+        
+
+        marker_c04c9cfeafe71140b7140f957507be9e.bindPopup(popup_9d24c014551cbccff8f1225ee26b0170)
+        ;
+
+        
+    
+    
+                marker_c04c9cfeafe71140b7140f957507be9e.setIcon(icon_999bb1eb91cd668d410537a4c9c9e7f9);
+            
+    
+            var marker_c09bfb3442493f5446af5ec216dec603 = L.marker(
+                [-15.8042, -47.8922],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_76bfcfa5178f2f39ef19fef985e6d49f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a814b3146d62581d6b2d9fd1c964ed44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5399f1ce0b434671b28bad7a63adca5a = $(`<div id="html_5399f1ce0b434671b28bad7a63adca5a" style="width: 100.0%; height: 100.0%;">Hospital Regional<br>UF: DF</div>`)[0];
+                popup_a814b3146d62581d6b2d9fd1c964ed44.setContent(html_5399f1ce0b434671b28bad7a63adca5a);
+            
+        
+
+        marker_c09bfb3442493f5446af5ec216dec603.bindPopup(popup_a814b3146d62581d6b2d9fd1c964ed44)
+        ;
+
+        
+    
+    
+                marker_c09bfb3442493f5446af5ec216dec603.setIcon(icon_76bfcfa5178f2f39ef19fef985e6d49f);
+            
+    
+            var marker_28d6e028fe5e66a948bfbc959314daf4 = L.marker(
+                [-15.7942, -47.8822],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_a66eab3251263818b7707d9749698d26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b981d8281333a4d911a153e5b11d214b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51104a4ff2e19014e0b7cd93ceb688fd = $(`<div id="html_51104a4ff2e19014e0b7cd93ceb688fd" style="width: 100.0%; height: 100.0%;">Hospital de Base<br>UF: DF</div>`)[0];
+                popup_b981d8281333a4d911a153e5b11d214b.setContent(html_51104a4ff2e19014e0b7cd93ceb688fd);
+            
+        
+
+        marker_28d6e028fe5e66a948bfbc959314daf4.bindPopup(popup_b981d8281333a4d911a153e5b11d214b)
+        ;
+
+        
+    
+    
+                marker_28d6e028fe5e66a948bfbc959314daf4.setIcon(icon_a66eab3251263818b7707d9749698d26);
+            
+    
+            var marker_6a0e717249b791a08b0854aa916aef40 = L.marker(
+                [-19.9267, -43.9445],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_dfab2e3c3ac62c362e40cfbc8ce6f9d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89301ba3931d6fbf3f16d2c1a6e6f287 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fa441d7175c091c97c382068385023f = $(`<div id="html_8fa441d7175c091c97c382068385023f" style="width: 100.0%; height: 100.0%;">Clínica Santa Maria<br>UF: MG</div>`)[0];
+                popup_89301ba3931d6fbf3f16d2c1a6e6f287.setContent(html_8fa441d7175c091c97c382068385023f);
+            
+        
+
+        marker_6a0e717249b791a08b0854aa916aef40.bindPopup(popup_89301ba3931d6fbf3f16d2c1a6e6f287)
+        ;
+
+        
+    
+    
+                marker_6a0e717249b791a08b0854aa916aef40.setIcon(icon_dfab2e3c3ac62c362e40cfbc8ce6f9d3);
+            
+    
+            var marker_82aa5838d1fa27c44fcae537fc4337a3 = L.marker(
+                [-19.9367, -43.9545],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_ffdc0ee98a1731e8ff1ead58752e01fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_152e7b33fbee90353762830bec78a314 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_471c613f17f6ea309a125036ae6206bf = $(`<div id="html_471c613f17f6ea309a125036ae6206bf" style="width: 100.0%; height: 100.0%;">Clínica São José<br>UF: MG</div>`)[0];
+                popup_152e7b33fbee90353762830bec78a314.setContent(html_471c613f17f6ea309a125036ae6206bf);
+            
+        
+
+        marker_82aa5838d1fa27c44fcae537fc4337a3.bindPopup(popup_152e7b33fbee90353762830bec78a314)
+        ;
+
+        
+    
+    
+                marker_82aa5838d1fa27c44fcae537fc4337a3.setIcon(icon_ffdc0ee98a1731e8ff1ead58752e01fa);
+            
+    
+            var marker_89a39b418f0b8c0b41cc8263df949466 = L.marker(
+                [-19.9167, -43.9345],
+                {
+}
+            ).addTo(map_fe6194a97530119e23cc239dfd496a97);
+        
+    
+            var icon_15db013dd0f88787b039bdc4189061c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d87a623680593f92803b88c72402e7d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b20e100ed5f50ba1cbea673c3206f9d0 = $(`<div id="html_b20e100ed5f50ba1cbea673c3206f9d0" style="width: 100.0%; height: 100.0%;">Clínica São Vicente<br>UF: MG</div>`)[0];
+                popup_d87a623680593f92803b88c72402e7d9.setContent(html_b20e100ed5f50ba1cbea673c3206f9d0);
+            
+        
+
+        marker_89a39b418f0b8c0b41cc8263df949466.bindPopup(popup_d87a623680593f92803b88c72402e7d9)
+        ;
+
+        
+    
+    
+                marker_89a39b418f0b8c0b41cc8263df949466.setIcon(icon_15db013dd0f88787b039bdc4189061c9);
+            
+</script>
+</html>
